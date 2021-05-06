@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background: url('../tausta.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#exitButton {
+    font-size: 4em;
+    position:fixed;
+    top:0;
+    right:0;
+    color: red;
+    margin:1em;
+    z-index:100;
+}

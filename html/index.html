@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, user-scalable=no" />
+    <title>QiMessaging (Toimiva ohjelman lopetus)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div style="font-size: 6em">
+      Toimiva ohjelman lopetus
+    </div>
+    <span id="exitButton" class="glyphicon glyphicon-remove" onclick="exitButtonClicked();"></span>
+  
+    <!-- Skriptit sijoitetaan bodyn loppuun-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+    <script>
+      var session = new QiSession();
+      
+      function exitButtonClicked() {
+        session.service("ALMemory").done(function (ALMemory) {
+          console.log("ALMemoryToimiva ohjelman lopetus");
+          ALMemory.raiseEvent("exit", "押したね"); // Miksi tässä on japaniksi ilmoitus painalluksesta?
+        });
+      }
+      </script>
+  </body>
+</html>
